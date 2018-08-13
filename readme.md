@@ -20,7 +20,7 @@ By default, the following Open Graph tags will be outputted, pulling content fro
 | `og:title` | The title of your article without any branding such as your site name. | The page's `<title>` node, found by the XPath expression: `ouc:properties/title/text()`. | 
 | `og:url` | The canonical URL for your page. This should be the undecorated URL, without session variables, user identifying parameters, or counters. | The page's fully qualified URL when published from OU Campus. | 
 | `og:description` | A brief description of the content, usually between 2 and 4 sentences. | The page's meta description content, found by the XPath expression: `ouc:properties/meta[@name='description']/@content`. | 
-| `og:site_name` | The name that you would like your website to be recognized by. | The page's `<title>` node, found by the XPath expression: `ouc:properties/title/text()`. | 
+| `og:site_name` | The name that you would like your website to be recognized by. | Directory Variable: `og-site-name` | 
 | `og:type` | The type of media of your content. This tag impacts how your content shows up in News Feed. | This is hardcoded to the default value of `website`. | 
 | `fb:admins` | A comma-separated list of either Facebook user IDs or a Facebook Platform application ID that administers this page. | Directory Variable: `fb-admins` | 
 | `fb:app_id` | Facebook Application ID | Directory Variable: `fb-app_id` | 

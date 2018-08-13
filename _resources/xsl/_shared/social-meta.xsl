@@ -13,6 +13,7 @@
     <!--Social Media Meta tags variables
         The values below must be added as directory variable-->
     <xsl:param name="ou:og-image" />
+    <xsl:param name="ou:og-site-name" />
     <xsl:param name="ou:twitter-image" />
     <xsl:param name="ou:twitter-creator" />
     <xsl:param name="ou:twitter-site" />
@@ -25,7 +26,7 @@
         <meta property="og:title" content="{ouc:properties/title/text()}"/>
         <meta property="og:url" content="{concat(string-join(remove(tokenize(substring($ou:httproot, 1), '/'), count(tokenize(substring($ou:httproot, 1), '/'))), '/'),$ou:path)}"/>
         <meta property="og:description" content="{ouc:properties/meta[@name='description']/@content}" />
-        <meta property="og:site_name" content="{ouc:properties/title/text()}"/>
+        <xsl:if test="$ou:og-site-name !=''"><meta property="og:site_name" content="{$ou:og-site-name}"/></xsl:if>
         <meta property="og:type" content="website"/>
         <xsl:if test="$ou:fb-admins !=''"><meta property="fb:admins" content="{$ou:fb-admins}" /></xsl:if>
         <xsl:if test="$ou:fb-app_id !=''"><meta property="fb:app_id" content="{$ou:fb-app_id}" /></xsl:if> 
