@@ -60,7 +60,7 @@ The following Twitter cards are commented out in the XSL by default, as Twitter 
 Perform the steps below to automatically add social media meta tags to your OU Campus pages.
 
 1. **Upload** the `social-meta.xsl` file to OU Campus.
- - This XSL file should be placed in `/_resources/xsl/_shared/`. XSL files do not need to be published, but it is recommended to [save a version](http://support.omniupdate.com/oucampus10/pages/review/versions.html) each time changes are made. 
+ - This XSL file should be placed in `/_resources/xsl/_shared/`. XSL files do not need to be published, but it is recommended to [save a version](https://support.omniupdate.com/learn-ou-campus/pages-files/review/versions.html) each time changes are made. 
 
 2. **Update existing XSL** to use the social meta tags code. This will require modifying `common.xsl` or another XSL file that outputs content within a page's `<head>` tag. Once you have located this key file, make the adjustments to this file as described below. 
  - *Import* the `social-meta.xsl` file. This statement should look something like the following: `<xsl:import href="_shared/social-meta.xsl" />`. This should be a page-relative path from the XSL that is importing this code. 
