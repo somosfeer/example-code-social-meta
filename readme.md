@@ -61,11 +61,15 @@ Perform the steps below to automatically add social media meta tags to your OU C
 
 1. **Upload** the `social-meta.xsl` file to OU Campus.
  - This XSL file should be placed in `/_resources/xsl/_shared/`. XSL files do not need to be published, but it is recommended to [save a version](https://support.omniupdate.com/learn-ou-campus/pages-files/review/versions.html) each time changes are made. 
+ - There is now the option of bringing in `social-meta.xsl` via cdn, just add the line below to your common.xsl
+ - <xsl:import href="/var/staging/OMNI-INF/stylesheets/implementation/v1/social-meta-tag-output.xsl"/> <!-- global social meta tags -->
 
 2. **Update existing XSL** to use the social meta tags code. This will require modifying `common.xsl` or another XSL file that outputs content within a page's `<head>` tag. Once you have located this key file, make the adjustments to this file as described below. 
  - *Import* the `social-meta.xsl` file. This statement should look something like the following: `<xsl:import href="_shared/social-meta.xsl" />`. This should be a page-relative path from the XSL that is importing this code. 
  - *Call the XSL Template* from within the `<head>` tag using the following statement: `<xsl:call-template name="social-meta" />`. 
 
-3. **Verify** the social meta tags are working by one of the following methods: 
+3. You will need to set '<xsl:param name="enable-social-meta-tag-output" select="false()" />' to `true()` in the '/_shared/variables.xsl' file.
+
+4. **Verify** the social meta tags are working by one of the following methods: 
  - Preview a page in OU Campus and view the frame source, or Publish a page from OU Campus and view the page source. You should see a series of Open Graph and Twitter Card tags appearing within the page's `<head>` tag. If you do not see these tags, ensure the page you are testing with is using the XSL that was modified, or is importing the XSL that was modified to call this package's social meta template. 
  - Publish a page from OU Campus that uses this XSL, then go to a social media network and put a link to the published page in the post. Typically, you can see a preview of the information before posting and can visually verify the social media meta tags are populating the post information from the information in OU Campus. 
